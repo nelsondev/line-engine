@@ -24,6 +24,7 @@ namespace LineEngine
         //Props
         public int State { get; set; }
         public Graphics Graphics { get; }
+        public Sound Sound { get; }
         private List<Behavior> Behaviors { get; }
         private Dictionary<string, Task> Tasks { get; }
         private Task Renderer { get; set; }
@@ -38,6 +39,7 @@ namespace LineEngine
         {
             State = CONTINUE_STATE;
             Graphics = new Graphics(window);
+            Sound = new Sound();
             Behaviors = new List<Behavior>();
             Tasks = new Dictionary<string, Task>();
         }
