@@ -47,9 +47,9 @@ namespace LineEngine
         /// <summary>
         /// Add a behavior to the event stack.
         /// </summary>
-        public void Register<T>() where T : Behavior, new()
+        public void Do<T>() where T : Behavior, new()
         {
-            Behaviors.Add(new T() {Game = this});
+            Behaviors.Add(new T() { Game = this });
         }
 
         /* Start Threaded Events
@@ -164,7 +164,7 @@ namespace LineEngine
         public IEnumerable<Renderable> GetObjects(string id) =>
             Graphics.GetRenderables(id);
 
-        public void Render<T>() where T : Renderable, new()
+        public void Draw<T>() where T : Renderable, new()
         {
             Graphics.Render(new T().Start(this));
         }

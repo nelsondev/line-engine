@@ -3,24 +3,33 @@ using LineEngine;
 
 namespace CommandWing
 {
-    class KeyboardMovement : Behavior
+    internal class KeyboardMovement : Behavior
     {
-        public KeyboardMovement() : base("Keyboard_Movement")
+        public KeyboardMovement()
         {
+            Threaded = true;
         }
+
+        private void KeyPressed(char key)
+        {
+            if (key == 'x')
+                Game.Stop();
+        }
+        
         public override void Execute()
         {
+            Input(KeyPressed);
         }
     }
 
-    class Ship : Renderable
+    internal class Ship : Renderable
     {
         public Ship() : base("Ship")
         {
             var sprite00 = new Sprite() 
             {
                 Origin = new Point(0, 0),
-                Displays = new Display[] 
+                Displays = new[] 
                 {
                     // > characters 
                     new Display(0, 0, '>'),
@@ -48,7 +57,7 @@ namespace CommandWing
             var sprite01 = new Sprite() 
             {
                 Origin = new Point(0, 0),
-                Displays = new Display[] 
+                Displays = new[] 
                 {
                     // * characters 
                     new Display(0, 0, '*'),
@@ -77,15 +86,14 @@ namespace CommandWing
             SetDefaultAnimation(animation);
         }
     }
-
-    class Square : Renderable
+    internal class Square : Renderable
     {
         public Square() : base("Square")
         {
             var sprite = new Sprite() 
             {
                 Origin = new Point(4, 5),
-                Displays = new Display[] 
+                Displays = new[] 
                 {
                     // ( characters 
                     new Display(0, 0, '('),
@@ -93,25 +101,25 @@ namespace CommandWing
 
                     // ) characters 
                     new Display(3, 0, ')'),
-                    new Display(3, 1, ')'),
-
+                    new Display(3, 1, ')')
                 }
             };
             
             SetDefaultAnimation(new Animation(sprite, 0));
         }
     }
-    
-    class Program
+
+    internal static class Program
     {
-        static void Main(string[] args)
+        private static void Main()
         {
             var window = new Window(21, 11);
             var game = new Game(window);
 
-            game.Register<KeyboardMovement>();
-            game.Render<Ship>();
-            game.Render<Square>();
+            game.Do<KeyboardMovement>();
+            
+            game.Draw<Ship>();
+            game.Draw<Square>();
             
             game.Start();
         }

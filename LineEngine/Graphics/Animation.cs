@@ -60,10 +60,11 @@ namespace LineEngine
 
                 do
                 {
+                    // shift sprite
                     self.Next();
 
+                    // sleep for frame time
                     Thread.Sleep(self.Speed);
-
                 } while (self.IsAnimated);
             });
 
@@ -88,8 +89,8 @@ namespace LineEngine
                     self.Next();
                     game.Refresh();
 
+                    // sleep for frame time
                     Thread.Sleep(self.Speed);
-
                 } while (self.IsAnimated);
             });
 
