@@ -76,12 +76,13 @@ namespace LineEngine
         {
             var self = this;
 
+            if (Speed == 0) return;
             if (Task != null) return;
 
             Task = new Task(() =>
             {
+                
                 IsAnimated = true;
-
                 do
                 {
                     self.Next();

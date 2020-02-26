@@ -5,7 +5,7 @@ using System.Text;
 
 namespace LineEngine
 {
-    public struct Graphics
+    public class Graphics
     {
         public Window Window { get; }
         private List<Renderable> Renderables { get; }

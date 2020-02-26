@@ -16,9 +16,11 @@
         {
             var game = new Game(new Window(21, 11));
 
-            game.Render(new Player(game));
-            game.Render(new Line());
+            game.Render<Player>();
+            game.Render<Line>();
+            game.Refresh();
             game.Start();
+            game.Refresh();
         }
     }
 }

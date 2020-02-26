@@ -2,15 +2,21 @@
 {
     public class Behavior
     {
-        protected Game Game { get; }
-        public bool Threaded { get; }
-        public string Name { get; }
+        public Game Game { get; set; }
+        public bool Threaded { get; set; }
+        public string Name { get; set; }
 
-        protected Behavior(Game game)
+        protected Behavior()
         {
-            Game = game;
+            Game = null;
             Threaded = false;
             Name = "";
+        }
+
+        protected Behavior(string name)
+        {
+            Threaded = true;
+            Name = name;
         }
 
         public virtual void Execute()

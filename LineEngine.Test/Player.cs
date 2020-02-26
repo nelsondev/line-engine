@@ -2,7 +2,7 @@
 {
     internal class Player : Renderable
     {
-        public Player(Game game) : base("player")
+        public Player() : base("player")
         {
 
             var defaultSprite = new Sprite()
@@ -65,9 +65,6 @@
 
             // Initialize new animation with frame time of 500ms
             SetDefaultAnimation(defaultAnimation);
-
-            // Start animation when object is created
-            Animation.Start(game);
         }
     }
 }

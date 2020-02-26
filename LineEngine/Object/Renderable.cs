@@ -37,6 +37,12 @@ namespace LineEngine
             ActualAnimation = Animations["default"];
         }
 
+        public Renderable Start(Game game)
+        {
+            GetAnimation().Start(game);
+            return this;
+        }
+
         // Translation
         public void Translate(int x, int y)
         {
