@@ -96,7 +96,7 @@ namespace LineEngine
             Renderer = new Task(() =>
             {
                 Graphics.Print();
-                Continue();
+                State = ContinueState;
             });
 
             // Start renderer thread
@@ -164,9 +164,16 @@ namespace LineEngine
         public IEnumerable<Renderable> GetObjects(string id) =>
             Graphics.GetRenderables(id);
 
-        public void Draw<T>() where T : Renderable, new()
+        public Renderable Draw(Renderable renderable)
         {
-            Graphics.Render(new T().Start(this));
+            Graphics.Render(renderable);
+            return renderable;
+        }
+        public Renderable Draw<T>() where T : Renderable, new()
+        {
+            var renderable = new T().Start(this);
+            Graphics.Render(renderable);
+            return renderable;
         }
     }
 }

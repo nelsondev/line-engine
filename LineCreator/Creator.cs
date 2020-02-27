@@ -5,6 +5,34 @@ using System.Linq;
 
 namespace LineCreator
 {
+    //public interface IAnimation
+    //{
+    //    int Speed { get; set; }
+    //    int Frame { get; }
+    //    int Length { get; }
+    //    Sprite Sprite { get; }
+    //}
+
+    //public class Animation : IAnimation
+    //{
+    //    public Animation()
+    //    {
+    //        Sprites = new List<Sprite>();
+    //    }
+
+    //    private List<Sprite> Sprites { get; }
+
+    //    public int Speed { get; set; }
+    //    public int Frame { get; set; }
+    //    public int Length => Sprites.Count;
+    //    public Sprite Sprite => Sprites[Frame];
+    //}
+
+    //public struct Sprite
+    //{
+
+    //}
+
     public struct Display
     {
         private int X { get; }
@@ -110,6 +138,11 @@ namespace LineCreator
         {
             richTextBox_Art.Clear();
             richTextBox_Generated.Clear();
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+            throw new System.NotImplementedException();
         }
     }
 }

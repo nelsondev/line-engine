@@ -93,7 +93,7 @@ namespace LineEngine
         {
             Window.Clear();
 
-            foreach (var display in Renderables.SelectMany(renderable => renderable.Sprite.Actual))
+            foreach (var display in Renderables.SelectMany(r => r.Sprite.Actual))
             {
                 Window.Grid.Place(display.Point, display.Character);
             }

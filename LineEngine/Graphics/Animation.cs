@@ -82,7 +82,6 @@ namespace LineEngine
 
             Task = new Task(() =>
             {
-                
                 IsAnimated = true;
                 do
                 {
