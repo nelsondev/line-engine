@@ -68,7 +68,7 @@ namespace LineEngine
         // Translation
         public void Translate(int horizontal, int vertical)
         {
-            Origin = Origin.Add(vertical, horizontal);
+            Origin = Origin.Add(horizontal, -vertical);
         }
         public void Translate(Point point)
         {
@@ -150,7 +150,7 @@ namespace LineEngine
             return result;
         }
 
-        public bool IsOffScreen(Window window)
+        public bool IsOnScreen(Window window)
         {
             return Displays.Any(d => d.Point.X >= window.Right 
                                      || d.Point.Y <= Window.Left 

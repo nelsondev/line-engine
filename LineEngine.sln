@@ -8,6 +8,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LineCreator", "LineCreator\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommandWing", "CommandWing\CommandWing.csproj", "{FAD590D4-1E41-459A-AF26-49DA1798AABB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LineDraw", "LineDraw\LineDraw.csproj", "{29AF32D2-B54A-4EC7-93CA-114C96A0BB73}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -30,5 +32,9 @@ Global
 		{FAD590D4-1E41-459A-AF26-49DA1798AABB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FAD590D4-1E41-459A-AF26-49DA1798AABB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FAD590D4-1E41-459A-AF26-49DA1798AABB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{29AF32D2-B54A-4EC7-93CA-114C96A0BB73}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{29AF32D2-B54A-4EC7-93CA-114C96A0BB73}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{29AF32D2-B54A-4EC7-93CA-114C96A0BB73}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{29AF32D2-B54A-4EC7-93CA-114C96A0BB73}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
