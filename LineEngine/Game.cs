@@ -17,9 +17,9 @@ namespace LineEngine
         public const int GameSpeed = 60;
 
         //Default states
-        public const int REFRESH_STATE = 1;
-        public const int CONTINUE_STATE = 0;
-        public const int EXIT_STATE = -1;
+        public const int RefreshState = 1;
+        public const int ContinueState = 0;
+        public const int ExitState = -1;
 
         //Props
         public int State { get; set; }
@@ -37,7 +37,7 @@ namespace LineEngine
         /// </param>
         public Game(Window window)
         {
-            State = CONTINUE_STATE;
+            State = ContinueState;
             Graphics = new Graphics(window);
             Sound = new Sound();
             Behaviors = new List<Behavior>();
@@ -47,22 +47,9 @@ namespace LineEngine
         /// <summary>
         /// Add a behavior to the event stack.
         /// </summary>
-        /// <param name="b">
-        /// Behavior or child of. To be registered in stack.
-        /// </param>
-        public void Register(Behavior b)
+        public void Do<T>() where T : Behavior, new()
         {
-            Behaviors.Add(b);
-        }
-        /// <summary>
-        /// Add a list behavior to the event stack.
-        /// </summary>
-        /// <param name="b">
-        /// List of behaviors or children of. To be registered in stack.
-        /// </param>
-        public void Register(IEnumerable<Behavior> b)
-        {
-            Behaviors.AddRange(b);
+            Behaviors.Add(new T() { Game = this });
         }
 
         /* Start Threaded Events
@@ -80,10 +67,7 @@ namespace LineEngine
         private void StartThreadedEvents()
         {
             // Grab all threaded game events
-            var query = from behavior
-                        in Behaviors
-                        where behavior.Threaded
-                        select behavior;
+            var query = Behaviors.Where(b => b.Threaded);
 
             query.ToList().ForEach((b) =>
             {
@@ -112,7 +96,7 @@ namespace LineEngine
             Renderer = new Task(() =>
             {
                 Graphics.Print();
-                State = CONTINUE_STATE;
+                Continue();
             });
 
             // Start renderer thread
@@ -132,7 +116,7 @@ namespace LineEngine
         /// </summary>
         public void Start()
         {
-            int count = 0;
+            var count = 0;
 
             do
             {
@@ -143,7 +127,7 @@ namespace LineEngine
                     b.Execute();
                 }
 
-                if (State == REFRESH_STATE)
+                if (State == RefreshState)
                     ScheduleRenderer();
 
                 if (count >= 2048)
@@ -156,36 +140,33 @@ namespace LineEngine
                 count++;
 
                 Thread.Sleep(GameSpeed);
-            } while (State != EXIT_STATE);
+            } while (State != ExitState);
         }
 
         public void Stop()
         {
-            State = EXIT_STATE;
+            State = ExitState;
         }
 
         public void Refresh()
         {
-            State = REFRESH_STATE;
+            State = RefreshState;
         }
 
         public void Continue()
         {
-            if (State != REFRESH_STATE)
-                State = CONTINUE_STATE;
+            if (State != RefreshState)
+                State = ContinueState;
         }
 
         public Renderable GetObject(string id) =>
             Graphics.GetRenderable(id);
         public IEnumerable<Renderable> GetObjects(string id) =>
             Graphics.GetRenderables(id);
-        public Renderable GetRenderable(string id) =>
-            Graphics.GetRenderable(id);
-        public Renderable[] GetRenderables(string id) =>
-            Graphics.GetRenderables(id);
-        public void Render(Renderable renderable) =>
-            Graphics.Render(renderable);
-        public void Render(Renderable[] list) =>
-            Graphics.Render(list);
+
+        public void Draw<T>() where T : Renderable, new()
+        {
+            Graphics.Render(new T().Start(this));
+        }
     }
 }

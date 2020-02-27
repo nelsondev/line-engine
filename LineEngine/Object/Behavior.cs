@@ -1,25 +1,30 @@
-﻿namespace LineEngine
+﻿using System;
+
+namespace LineEngine
 {
     public class Behavior
     {
-        protected Game Game { get; }
-        public bool Threaded { get; }
+        public Game Game { get; set; }
+        public bool Threaded { get; protected set; }
         public string Name { get; }
 
-        protected Behavior(Game game, string name = null)
+        protected Behavior()
         {
-            Game = game;
+            Threaded = false;
+            Name = GetType().Name;
+        }
 
-            if (name != null)
-                Threaded = true;
-            else
-                Threaded = false;
-
-            Name = name;
+        protected void Input(Action<char> call)
+        {
+            while (Game.State != Game.ExitState)
+            {
+                call(Console.ReadKey().KeyChar);
+            }
         }
 
         public virtual void Execute()
         {
+            Game.Continue();
         }
     }
 }

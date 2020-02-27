@@ -60,10 +60,11 @@ namespace LineEngine
 
                 do
                 {
+                    // shift sprite
                     self.Next();
 
+                    // sleep for frame time
                     Thread.Sleep(self.Speed);
-
                 } while (self.IsAnimated);
             });
 
@@ -76,19 +77,20 @@ namespace LineEngine
         {
             var self = this;
 
+            if (Speed == 0) return;
             if (Task != null) return;
 
             Task = new Task(() =>
             {
+                
                 IsAnimated = true;
-
                 do
                 {
                     self.Next();
                     game.Refresh();
 
+                    // sleep for frame time
                     Thread.Sleep(self.Speed);
-
                 } while (self.IsAnimated);
             });
 

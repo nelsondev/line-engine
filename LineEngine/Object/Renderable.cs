@@ -47,6 +47,7 @@ namespace LineEngine
             ActualAnimation = null;
             Animations = new Dictionary<string, Animation>();
         }
+        
         protected Renderable(string id)
         {
             Id = id;
@@ -54,15 +55,17 @@ namespace LineEngine
             Animations = new Dictionary<string, Animation>();
         }
 
-        public Animation GetAnimation()
+        protected Animation GetAnimation()
         {
             return ActualAnimation ?? GetDefaultAnimation();
         }
-        public Animation GetDefaultAnimation()
+
+        protected Animation GetDefaultAnimation()
         {
             return Animations["default"];
         }
-        public Animation SetDefaultAnimation(Animation animation)
+
+        protected void SetDefaultAnimation(Animation animation)
         {
             Animations.Add("default", animation);
             ActualAnimation = Animations["default"];
@@ -81,7 +84,14 @@ namespace LineEngine
             return ActualAnimation = animation;
         }
 
+        public Renderable Start(Game game)
+        {
+            GetAnimation().Start(game);
+            return this;
+        }
+
         // Translation
+        // ReSharper disable once UnusedMember.Global
         public void Translate(int x, int y)
         {
             foreach (var sprite in Animation.Sprites)
@@ -89,6 +99,7 @@ namespace LineEngine
                 sprite.Translate(y, x);
             }
         }
+        // ReSharper disable once UnusedMember.Global
         public void Translate(Point point)
         {
             foreach (var sprite in Animation.Sprites)
