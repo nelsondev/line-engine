@@ -65,7 +65,7 @@ namespace LineEngine
             return Animations["default"];
         }
 
-        protected void SetDefaultAnimation(Animation animation)
+        protected Animation SetDefaultAnimation(Animation animation)
         {
             Animations.Add("default", animation);
             ActualAnimation = Animations["default"];
