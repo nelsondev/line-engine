@@ -5,7 +5,24 @@ using System.Text;
 
 namespace LineEngine
 {
-    public class Graphics
+    public interface IGraphics
+    {
+        Window Window { get; set; }
+        string Header { get; set; }
+        string Footer { get; set; }
+
+        void Render(Renderable renderable);
+        void Render(Renderable[] renderables);
+        Renderable Get(string id);
+        Renderable[] GetMany(string id);
+        void Destroy(string id);
+        void Destroy(Renderable renderable);
+        void Destroy(Renderable[] renderables);
+
+        bool Print();
+    }
+    
+    public struct Graphics
     {
         public Window Window { get; }
         private List<Renderable> Renderables { get; }

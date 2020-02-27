@@ -1,15 +1,16 @@
 ﻿namespace LineEngine
 {
-    public class Display
+    public interface IDisplay
+    {
+        Point Point { get; set; }
+        char Character { get; set; }
+        Display Adjusted(Point origin);
+    }
+    public struct Display : IDisplay
     {
         public Point Point { get; set; }
         public char Character { get; set; }
-
-        public Display()
-        {
-            Point = new Point(0, 0);
-            Character = ' ';
-        }
+        
         public Display(Point point)
         {
             Point = point;

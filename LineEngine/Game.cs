@@ -24,7 +24,7 @@ namespace LineEngine
         //Props
         public int State { get; set; }
         public Graphics Graphics { get; }
-        public Sound Sound { get; }
+        public ISound Sound { get; }
         private List<Behavior> Behaviors { get; }
         private Dictionary<string, Task> Tasks { get; }
         private Task Renderer { get; set; }
