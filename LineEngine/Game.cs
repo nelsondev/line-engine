@@ -14,7 +14,7 @@ namespace LineEngine
         /// <summary>
         /// Time in milliseconds for max game refresh time
         /// </summary>
-        public const int GameSpeed = 1000;
+        public const int GameSpeed = 60;
 
         //Default states
         public const int REFRESH_STATE = 1;
@@ -24,7 +24,7 @@ namespace LineEngine
         //Props
         public int State { get; set; }
         public Graphics Graphics { get; }
-        public Sound Sound { get; }
+        public ISound Sound { get; }
         private List<Behavior> Behaviors { get; }
         private Dictionary<string, Task> Tasks { get; }
         private Task Renderer { get; set; }

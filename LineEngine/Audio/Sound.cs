@@ -1,43 +1,45 @@
 ﻿using System.Collections.Generic;
+using System.Media;
 
 namespace LineEngine
 {
-    public struct Sound
+    public interface ISound
     {
-        private Dictionary<string, System.Media.SoundPlayer> Sounds { get; set; }
-
-        public System.Media.SoundPlayer Schedule(string name, string path)
+        void Play(string name, string path);
+        void PlayLooping(string name, string path);
+        void Stop(string name);
+    }
+    
+    public struct Sound : ISound
+    {
+        public Sound(Dictionary<string, SoundPlayer> sounds)
         {
-            var player = new System.Media.SoundPlayer(path);
+            Sounds = sounds;
+        }
+
+        private Dictionary<string, SoundPlayer> Sounds { get; }
+        private SoundPlayer Schedule(string name, string path)
+        {
+            var player = new SoundPlayer(path);
             Sounds.Add(name, player);
             return player;
         }
         public void Play(string name, string path)
         {
-            var player = Sounds[name];
-
-            if (player == null)
-                player = Schedule(name, path);
+            var player = Sounds[name] ?? Schedule(name, path);
 
             player.Play();
         }
         public void PlayLooping(string name, string path)
         {
-            var player = Sounds[name];
-
-            if (player == null)
-                player = Schedule(name, path);
-
+            var player = Sounds[name] ?? Schedule(name, path);
             player.PlayLooping();
         }
         public void Stop(string name)
         {
             var player = Sounds[name];
 
-            if (player == null)
-                return;
-
-            player.Stop();
+            player?.Stop();
         }
     }
 }

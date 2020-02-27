@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
+    <e p="C:\Users\nelso\.Rider2019.3\config\scratches" t="IncludeRecursive" />
     <e p="C:\Users\nelso\.Rider2019.3\system\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\nelso\.Rider2019.3\system\resharper-host\local\Transient\ReSharperHost\v193\SolutionCaches\_LineEngine.-2133348583.00" t="ExcludeRecursive" />
-    <e p="D:\Repos\Games\line-engine\LineEngine" t="IncludeFlat">
+    <e p="C:\Users\nelso\.Rider2019.3\system\resharper-host\local\Transient\ReSharperHost\v193\SolutionCaches\_LineEngine.1205824775.00" t="ExcludeRecursive" />
+    <e p="D:\Repos\Games\line-engine" t="IncludeFlat">
       <e p="LineCreator" t="IncludeRecursive">
         <e p="App.config" t="Include" />
         <e p="bin" t="ExcludeRecursive" />
