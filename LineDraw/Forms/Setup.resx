@@ -117,11 +117,34 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="preview" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\preview.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="pictureBox1.InitialImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAPIAAAEsCAMAAADO9R59AAAABGdBTUEAALGPC/xhBQAAAwBQTFRFMDAw
+        Ly9KLy9jL0p6Si8vYy8vekovL2ORSnqnXnmnY5G8eqeReqeneqe8kWMvp3pKvJFjp6d6vKd6kbyRvLyR
+        vLynvb29AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAuX4v5QAAAAlwSFlzAAAO
+        wwAADsMBx2+oZAAAAQdJREFUeF7t2kFuwjAQBVBTCKShBQq09z9qnXS6q4LVBYvxe5s/ipRFlNhSvlwA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgLw2x2G8xJzdeF7i5TbE1IHpuqsP/jWbpy6M96GU7cduOsWF
+        Dhw+9+Vw2bzt61jfdf2+I9Ka3/L78mH3spiXtVx3sbqB/VxIL/bp6VRX8zIBAAD8S3RfDZFGdF8NkUV0
+        X6+PI25IILqvhkjjt/t6HFlE99UQcUMC0X01RBrRfTUEAADAn7IVW2uizqr/hZmKrXXOffXBua/8nPsC
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAJynlG6qNFEoXLjYnAAAAAElFTkSuQmCC
+</value>
   </data>
-  <data name="preview1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\preview1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="label3.Text" xml:space="preserve">
+    <value>Welcome to LineDraw, a tool I quickly made for making sprite creation a little smoother. Why would you EVER want to draw ascii pixel by pixel and output the code when you could smash this bad boy on, create a new sprite, and generate all the code for ya?
+
+Like this tool? Wanna contribute?
+</value>
   </data>
 </root>

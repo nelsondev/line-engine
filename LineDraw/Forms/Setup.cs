@@ -7,14 +7,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using LineEngine;
 
-namespace LineDraw
+namespace LineDraw.Forms
 {
-    public partial class Form1 : Form
+    public partial class Setup : Form
     {
-        public Form1()
+        public Setup()
         {
             InitializeComponent();
+        }
+
+        private void button_Create_Click(object sender, EventArgs e)
+        {
+            new Create().Show();
         }
     }
 }

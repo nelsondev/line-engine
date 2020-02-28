@@ -5,6 +5,7 @@ namespace LineEngine
 {
     public class Animation
     {
+        public string Name { get; set; }
         public Sprite[] Sprites { get; set; }
         public int Frame { get; set; }
         public int Speed { get; set; }
@@ -12,8 +13,28 @@ namespace LineEngine
         private Task Task { get; set; }
         public Sprite Sprite => Sprites[Frame];
 
+        public Animation()
+        {
+            Name = null;
+            Sprites = null;
+            Frame = 0;
+            Speed = 0;
+            IsAnimated = false;
+            Task = null;
+        }
+
+        public Animation(string name)
+        {
+            Name = name;
+            Sprites = null;
+            Frame = 0;
+            Speed = 0;
+            IsAnimated = false;
+            Task = null;
+        }
         public Animation(Sprite[] sprites, int speed)
         {
+            Name = null;
             Sprites = sprites;
             Frame = 0;
             Speed = speed;
@@ -31,7 +52,7 @@ namespace LineEngine
 
         public Animation(Sprite sprite)
         {
-            Sprites = new Sprite[0];
+            Sprites = new[] { sprite };
             Frame = 0;
             Speed = 0;
             IsAnimated = false;

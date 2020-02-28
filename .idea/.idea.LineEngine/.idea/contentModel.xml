@@ -37,8 +37,21 @@
       <e p="LineDraw" t="IncludeRecursive">
         <e p="App.config" t="Include" />
         <e p="bin" t="ExcludeRecursive" />
-        <e p="Form1.cs" t="Include" />
-        <e p="Form1.Designer.cs" t="Include" />
+        <e p="Forms" t="Include">
+          <e p="Create.cs" t="Include" />
+          <e p="Create.Designer.cs" t="Include" />
+          <e p="Create.resx" t="Include" />
+          <e p="Editor.cs" t="Include" />
+          <e p="Editor.Designer.cs" t="Include" />
+          <e p="Editor.resx" t="Include" />
+          <e p="Setup.cs" t="Include" />
+          <e p="Setup.Designer.cs" t="Include" />
+          <e p="Setup.resx" t="Include" />
+          <e p="StateController.cs" t="Include" />
+        </e>
+        <e p="img" t="Include">
+          <e p="preview.png" t="Include" />
+        </e>
         <e p="LineDraw.csproj" t="IncludeRecursive" />
         <e p="obj" t="ExcludeRecursive" />
         <e p="Program.cs" t="Include" />
@@ -48,6 +61,10 @@
           <e p="Resources.resx" t="Include" />
           <e p="Settings.Designer.cs" t="Include" />
           <e p="Settings.settings" t="Include" />
+        </e>
+        <e p="Resources" t="Include">
+          <e p="preview.png" t="Include" />
+          <e p="preview1.png" t="Include" />
         </e>
       </e>
       <e p="LineEngine" t="IncludeRecursive">
