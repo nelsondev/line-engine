@@ -47,6 +47,8 @@ namespace LineDraw.Forms
             this.toolStripMenuItem_Edit_Delete = new System.Windows.Forms.ToolStripMenuItem();
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.textBox_Frame_Name = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.comboBox_Default_Animation = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -70,8 +72,6 @@ namespace LineDraw.Forms
             this.richTextBox_Input = new System.Windows.Forms.RichTextBox();
             this.newTabPage = new System.Windows.Forms.TabPage();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.label1 = new System.Windows.Forms.Label();
-            this.textBox_Frame_Name = new System.Windows.Forms.TextBox();
             this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -204,6 +204,23 @@ namespace LineDraw.Forms
             this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Frame";
+            // 
+            // textBox_Frame_Name
+            // 
+            this.textBox_Frame_Name.Location = new System.Drawing.Point(6, 38);
+            this.textBox_Frame_Name.Name = "textBox_Frame_Name";
+            this.textBox_Frame_Name.Size = new System.Drawing.Size(192, 23);
+            this.textBox_Frame_Name.TabIndex = 11;
+            this.textBox_Frame_Name.TextChanged += new System.EventHandler(this.textBox_Frame_Name_TextChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(6, 18);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(39, 15);
+            this.label1.TabIndex = 10;
+            this.label1.Text = "Name";
             // 
             // comboBox_Default_Animation
             // 
@@ -408,7 +425,7 @@ namespace LineDraw.Forms
             this.listBox_Frames.ItemHeight = 15;
             this.listBox_Frames.Location = new System.Drawing.Point(416, 27);
             this.listBox_Frames.Name = "listBox_Frames";
-            this.listBox_Frames.Size = new System.Drawing.Size(143, 390);
+            this.listBox_Frames.Size = new System.Drawing.Size(148, 390);
             this.listBox_Frames.TabIndex = 12;
             this.listBox_Frames.SelectedIndexChanged +=
                 new System.EventHandler(this.listBox_Frames_SelectedIndexChanged);
@@ -458,23 +475,6 @@ namespace LineDraw.Forms
             this.splitContainer1.SplitterDistance = 583;
             this.splitContainer1.SplitterWidth = 3;
             this.splitContainer1.TabIndex = 2;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 18);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(39, 15);
-            this.label1.TabIndex = 10;
-            this.label1.Text = "Name";
-            // 
-            // textBox_Frame_Name
-            // 
-            this.textBox_Frame_Name.Location = new System.Drawing.Point(6, 38);
-            this.textBox_Frame_Name.Name = "textBox_Frame_Name";
-            this.textBox_Frame_Name.Size = new System.Drawing.Size(192, 23);
-            this.textBox_Frame_Name.TabIndex = 11;
-            this.textBox_Frame_Name.TextChanged += new System.EventHandler(this.textBox_Frame_Name_TextChanged);
             // 
             // Editor
             // 

@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using System.Windows.Forms;
 using LineEngine;
 
@@ -26,6 +27,8 @@ namespace LineDraw.Forms
     {
         List<IFrame> Frames { get; set; }
         string Speed { get; set; }
+
+        IFrame AddFrame();
     }
     
     public class State : IState
@@ -43,6 +46,24 @@ namespace LineDraw.Forms
         public State(List<IFrame> frames)
         {
             Frames = frames;
+        }
+
+        private bool FrameExists(string name)
+        {
+            return Frames.Any(f => f.Name == name);
+        }
+        
+        private string NewFrameName(int count)
+        {
+            var name = "frame" + count;
+            return FrameExists(name) ? NewFrameName(count + 1) : name;
+        }
+        
+        public IFrame AddFrame()
+        {
+            var frame = new Frame(NewFrameName(0), "");
+            Frames.Add(frame);
+            return frame;
         }
 
         public List<IFrame> Frames { get; set; }

@@ -10,6 +10,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommandWing", "CommandWing\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LineDraw", "LineDraw\LineDraw.csproj", "{29AF32D2-B54A-4EC7-93CA-114C96A0BB73}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LineSCII", "LineSCII\LineSCII.csproj", "{157A4BFD-312E-4F9D-B2FB-B3F62C817587}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -36,5 +38,9 @@ Global
 		{29AF32D2-B54A-4EC7-93CA-114C96A0BB73}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{29AF32D2-B54A-4EC7-93CA-114C96A0BB73}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{29AF32D2-B54A-4EC7-93CA-114C96A0BB73}.Release|Any CPU.Build.0 = Release|Any CPU
+		{157A4BFD-312E-4F9D-B2FB-B3F62C817587}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{157A4BFD-312E-4F9D-B2FB-B3F62C817587}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{157A4BFD-312E-4F9D-B2FB-B3F62C817587}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{157A4BFD-312E-4F9D-B2FB-B3F62C817587}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

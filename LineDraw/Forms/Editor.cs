@@ -2,16 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
-using LineEngine;
 
 namespace LineDraw.Forms
 {
     public class Tab
     {
-        public Tab()
-        {
-            
-        }
         public Tab(string name)
         {
             Name = name;
@@ -21,7 +16,7 @@ namespace LineDraw.Forms
             };
         }
         public string Name { get; set; }
-        public IState State { get; set; }
+        public IState State { get; }
     }
     
     public partial class Editor : Form
@@ -39,7 +34,7 @@ namespace LineDraw.Forms
             UpdateInterface(GetTab(name));
         }
 
-        public void Init(string name)
+        private void Init(string name)
         {
             SelectedTabName = name;
             var tab = new Tab(name);
@@ -51,28 +46,28 @@ namespace LineDraw.Forms
             listBox_Frames.SelectedIndex = 0;
         }
 
-        public Tab GetTab(string name)
+        private Tab GetTab(string name)
         {
             return Tabs.Single(t => t.Name == name);
         }
 
-        public IFrame GetFrame()
+        private IFrame GetFrame()
         {
             return GetTab(SelectedTabName).State.Frames.Single(f => f.Name == SelectedFrameName);
         }
 
-        public bool TabExists(string name)
+        private bool TabExists(string name)
         {
             return Tabs.Any(t => t.Name == name);
         }
-        
-        public bool FrameExists(string name)
+
+        private bool FrameExists(string name)
         {
             return GetTab(SelectedTabName).State.Frames.Any(f => f.Name == name);
         }
 
 
-        public void UpdateInterface(Tab tab)
+        private void UpdateInterface(Tab tab)
         {
             SelectedTabName = tab.Name;
             
@@ -91,23 +86,17 @@ namespace LineDraw.Forms
             }
         }
 
-        public void UpdateFrame(IFrame frame)
+        private void UpdateFrame(IFrame frame)
         {
             SelectedFrameName = frame.Name;
             richTextBox_Input.Text = frame.Text;
             textBox_Frame_Name.Text = SelectedFrameName;
         }
 
-        public string NewTabName(int count)
+        private string NewTabName(int count)
         {
             var name = "NewAnimation" + count;
             return TabExists(name) ? NewTabName(count + 1) : name;
-        }
-        
-        public string NewFrameName(int count)
-        {
-            var name = "frame" + count;
-            return FrameExists(name) ? NewFrameName(count + 1) : name;
         }
 
         private void CreateTabPage()
@@ -167,7 +156,7 @@ namespace LineDraw.Forms
             
             if (FrameExists(textBox_Frame_Name.Text))
             {
-                MessageBox.Show("Please pick a unique frame name.", "Invalid frame name.", MessageBoxButtons.OK,
+                MessageBox.Show(@"Please pick a unique frame name.", @"Invalid frame name.", MessageBoxButtons.OK,
                     MessageBoxIcon.Stop);
                 return;
             }
@@ -180,10 +169,8 @@ namespace LineDraw.Forms
         private void button_Add_Frame_Click(object sender, EventArgs e)
         {
             var tab = GetTab(SelectedTabName);
-            var name = NewFrameName(tab.State.Frames.Count);
-            var frame = new Frame(name, "");
-            tab.State.Frames.Add(frame);
-            SelectedFrameName = name;
+            var frame = tab.State.AddFrame();
+            SelectedFrameName = frame.Name;
             
             UpdateInterface(tab);
             UpdateFrame(frame);
